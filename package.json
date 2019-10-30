@@ -1,0 +1,66 @@
+{
+  "name": "clean-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "yarn run build",
+    "start": "node .",
+    "start:dev": "yarn run build && nodemon .",
+    "test": "NODE_ENV=test jest --testTimeout=10000 --coverage",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "migration:make": "knex migrate:make --knexfile src/web/knexfile.ts",
+    "migration:update": "knex migrate:latest --knexfile src/web/knexfile.ts",
+    "migration:rollback": "knex migrate:rollback --knexfile src/web/knexfile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-winston": "4.0.1",
+    "helmet": "3.21.2",
+    "http-status-codes": "1.4.0",
+    "knex": "0.20.0",
+    "objection": "1.6.11",
+    "pg": "7.12.1",
+    "swagger-jsdoc": "3.4.0",
+    "swagger-ui-express": "4.1.2",
+    "winston": "3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.6.3",
+    "@types/dotenv": "8.2.0",
+    "@types/express": "4.17.1",
+    "@types/helmet": "0.0.45",
+    "@types/jest": "24.0.21",
+    "@types/mock-req-res": "1.1.0",
+    "@types/node": "12.11.7",
+    "@types/supertest": "2.0.8",
+    "@types/swagger-jsdoc": "^3.0.2",
+    "@types/swagger-ui-express": "^3.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^24.9.0",
+    "cross-env": "^6.0.3",
+    "husky": "3.0.9",
+    "jest": "24.9.0",
+    "mock-req-res": "1.1.2",
+    "nodemon": "^1.19.4",
+    "prettier": "1.18.2",
+    "pretty-quick": "2.0.0",
+    "supertest": "4.0.2",
+    "ts-jest": "24.1.0",
+    "ts-node": "8.4.1",
+    "tslint": "5.20.0",
+    "typescript": "3.6.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

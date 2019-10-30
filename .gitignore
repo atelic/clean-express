@@ -1,0 +1,9 @@
+node_modules
+dist
+*.db
+*.sqlite3
+yarn-error.log
+.idea
+coverage
+.env
+npm-debug.log
