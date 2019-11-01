@@ -1,29 +1,29 @@
-import { Hello } from "../../../app/entities/hello"
+import { Hello } from "../../../app/entities/hello";
 
 export class CreateHelloRequest {
-  public message: string
-  public author?: string
+  public message: string;
+  public author?: string;
 
   constructor({ message, author }: { message: string; author?: string }) {
-    this.message = message
-    this.author = author
+    this.message = message;
+    this.author = author;
   }
 
   public validate() {
-    let errors = null
+    let errors = null;
     if (!this.message) {
       errors = {
         message: "Message must exist.",
-      }
+      };
     }
-    return errors
+    return errors;
   }
 
   public toModel() {
-    const model = new Hello()
-    model.message = this.message
-    model.author = this.author
+    const model = new Hello();
+    model.message = this.message;
+    model.author = this.author;
 
-    return model
+    return model;
   }
 }

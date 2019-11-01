@@ -1,12 +1,12 @@
-import { Hello } from "../../app/entities/hello"
-import { IHelloRepository } from "../../app/interfaces/IHelloRepository"
+import { Hello } from "../../app/entities/hello";
+import { IHelloRepository } from "../../app/interfaces/IHelloRepository";
 
 export class HelloRepository implements IHelloRepository {
   public async getHellos() {
-    return Hello.query()
+    return Hello.query();
   }
 
   public async createHello(hello: Hello) {
-    return Hello.query().insert(hello)
+    return Hello.query().insert(hello);
   }
 }

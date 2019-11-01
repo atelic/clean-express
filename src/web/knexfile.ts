@@ -1,6 +1,6 @@
 // Update with your config settings.
 // tslint:disable
-require("dotenv").config()
+require("dotenv").config();
 
 // Ignore the tslint error about alphabetized keys.
 module.exports = {
@@ -81,4 +81,4 @@ module.exports = {
       tableName: "knex_migrations",
     },
   },
-}
+};

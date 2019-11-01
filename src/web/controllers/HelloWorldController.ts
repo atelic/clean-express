@@ -1,8 +1,8 @@
-import express, { Request, Response, Router } from "express"
-import HttpStatus from "http-status-codes"
+import express, { Request, Response, Router } from "express";
+import HttpStatus from "http-status-codes";
 
-import { IHelloService } from "../../app/interfaces/IHelloService"
-import { CreateHelloRequest } from "../models/request/CreateHelloRequest"
+import { IHelloService } from "../../app/interfaces/IHelloService";
+import { CreateHelloRequest } from "../models/request/CreateHelloRequest";
 /**
  * @swagger
  * definitions:
@@ -46,11 +46,11 @@ import { CreateHelloRequest } from "../models/request/CreateHelloRequest"
  */
 export const getHellos = (helloService: IHelloService) => {
   return async (req: Request, res: Response) => {
-    const hellos = await helloService.getHellos()
+    const hellos = await helloService.getHellos();
 
-    return res.status(HttpStatus.OK).send(hellos)
-  }
-}
+    return res.status(HttpStatus.OK).send(hellos);
+  };
+};
 
 /**
  * @swagger
@@ -80,23 +80,23 @@ export const getHellos = (helloService: IHelloService) => {
  */
 export const createHello = (helloService: IHelloService) => {
   return async (req: Request, res: Response) => {
-    const requestedHello = new CreateHelloRequest(req.body)
+    const requestedHello = new CreateHelloRequest(req.body);
 
-    const errors = requestedHello.validate()
+    const errors = requestedHello.validate();
     if (errors) {
-      return res.status(HttpStatus.BAD_REQUEST).send(errors)
+      return res.status(HttpStatus.BAD_REQUEST).send(errors);
     }
 
-    const resp = await helloService.createHello(requestedHello.toModel())
+    const resp = await helloService.createHello(requestedHello.toModel());
 
-    return res.status(HttpStatus.CREATED).send(resp)
-  }
-}
+    return res.status(HttpStatus.CREATED).send(resp);
+  };
+};
 
 export const HelloWorldController = (helloService: IHelloService): Router => {
-  const router = express.Router()
-  router.get("/", getHellos(helloService))
-  router.post("/", createHello(helloService))
+  const router = express.Router();
+  router.get("/", getHellos(helloService));
+  router.post("/", createHello(helloService));
 
-  return router
-}
+  return router;
+};

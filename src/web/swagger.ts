@@ -1,4 +1,4 @@
-import swaggerJsdoc from "swagger-jsdoc"
+import swaggerJsdoc from "swagger-jsdoc";
 
 export const swaggerSpec = swaggerJsdoc({
   apis: ["**/*.ts"],
@@ -9,4 +9,4 @@ export const swaggerSpec = swaggerJsdoc({
       version: "0.0.1",
     },
   },
-})
+});

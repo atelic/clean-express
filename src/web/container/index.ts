@@ -1,5 +1,3 @@
 import { helloService } from "./hellos";
 
-export {
-    helloService,
-};
+export { helloService };

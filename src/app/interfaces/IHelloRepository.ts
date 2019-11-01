@@ -1,7 +1,7 @@
-import { CreateHelloRequest } from "../../web/models/request/CreateHelloRequest"
-import { Hello } from "../entities/hello"
+import { CreateHelloRequest } from "../../web/models/request/CreateHelloRequest";
+import { Hello } from "../entities/hello";
 
 export interface IHelloRepository {
-  getHellos(): Promise<Hello[]>
-  createHello(hello: Hello): Promise<Hello>
+  getHellos(): Promise<Hello[]>;
+  createHello(hello: Hello): Promise<Hello>;
 }

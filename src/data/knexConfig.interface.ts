@@ -1,3 +1,3 @@
 export interface IKnexConfig {
-  [key: string]: object
+  [key: string]: object;
 }
