@@ -1,9 +1,9 @@
-import * as HttpStatus from "http-status-codes"
+import HttpStatus from "http-status-codes"
 import { mockRequest, mockResponse } from "mock-req-res"
 
 import { Hello } from "../../../../../src/app/entities/hello"
-import HelloRepository from "../../../../../src/infra/repositories/HelloRepository"
-import HelloService from "../../../../../src/app/services/HelloService"
+import { HelloRepository } from "../../../../../src/infra/repositories/HelloRepository"
+import { HelloService } from "../../../../../src/app/services/HelloService"
 import { getHellos } from "../../../../../src/web/controllers/HelloWorldController"
 
 test("getHellos returns empty list given service returns empty list", async () => {

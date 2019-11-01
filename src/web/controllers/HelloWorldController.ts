@@ -1,8 +1,8 @@
 import express, { Request, Response, Router } from "express"
 import HttpStatus from "http-status-codes"
 
-import IHelloService from "../../app/interfaces/IHelloService"
-import CreateHelloRequest from "../models/request/CreateHelloRequest"
+import { IHelloService } from "../../app/interfaces/IHelloService"
+import { CreateHelloRequest } from "../models/request/CreateHelloRequest"
 /**
  * @swagger
  * definitions:
@@ -93,7 +93,7 @@ export const createHello = (helloService: IHelloService) => {
   }
 }
 
-export default (helloService: IHelloService): Router => {
+export const HelloWorldController = (helloService: IHelloService): Router => {
   const router = express.Router()
   router.get("/", getHellos(helloService))
   router.post("/", createHello(helloService))

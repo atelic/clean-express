@@ -1,4 +1,4 @@
-import CreateHelloRequest from "../../../../../src/web/models/request/CreateHelloRequest"
+import { CreateHelloRequest } from "../../../../../src/web/models/request/CreateHelloRequest"
 import { Hello } from "../../../../../src/app/entities/hello"
 
 test("constructor sets message and author given valid body", () => {

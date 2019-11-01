@@ -1,6 +1,6 @@
 import dotenv from "dotenv"
 
-import app from "./web"
+import { app } from "./web"
 
 dotenv.config()
 

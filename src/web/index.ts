@@ -5,11 +5,11 @@ import { Model } from "objection"
 import swaggerUi from "swagger-ui-express"
 
 import { IKnexConfig } from "../data/knexConfig.interface"
-import routes from "./controllers"
+import { router } from "./controllers"
 
 // tslint:disable-next-line:no-var-requires
 const knexConfig: IKnexConfig = require("./knexfile")
-import requestLogger from "./middleware/logging"
+import { requestLogger } from "./middleware/logging"
 import { swaggerSpec } from "./swagger"
 
 // Initialize knex with the current environment
@@ -31,9 +31,9 @@ app.use(express.json())
 app.use(requestLogger)
 
 // Apply version prefix to router
-app.use("/api/v1", routes)
+app.use("/api/v1", router)
 
 // Serve our auto-generated docs
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
-export default app
+export { app }
