@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "8.2.0",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "express-winston": "4.0.1",
     "helmet": "3.21.2",
     "http-status-codes": "1.4.0",
