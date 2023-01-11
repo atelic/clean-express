@@ -24,7 +24,7 @@
     "express-winston": "4.0.1",
     "helmet": "3.21.2",
     "http-status-codes": "1.4.0",
-    "knex": "0.20.0",
+    "knex": "2.4.0",
     "objection": "1.6.11",
     "pg": "7.12.1",
     "swagger-jsdoc": "3.4.0",
